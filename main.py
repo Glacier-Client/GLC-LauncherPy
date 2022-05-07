@@ -91,13 +91,16 @@ class LoadingWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        loadinPageStyleSheet = "background-image : url(background.png);"
+        loadinPageStyleSheet = "background-image : url(bg.png);"
 
         self.setWindowTitle("Glacier Client - Launcher")
         self.setWindowIcon(QtGui.QIcon("logo.png"))
-        self.setFixedSize(QSize(400, 600))
+        self.setFixedSize(QSize(844, 457))
         self.setStyleSheet(loadinPageStyleSheet)
-        self.UiComponents()
+        #self.UiComponents()
+        self.drawtop()
+        self.drawbottom()
+        self.playbtn()
         self.show()
 
     def UiComponents(self):
@@ -106,6 +109,33 @@ class LoadingWindow(QMainWindow):
         button.setGeometry(50, 300, 302, 122)
         button.setStyleSheet(loginPageStyleSheet)
         button.clicked.connect(self.loginScreen)
+
+    def drawtop(self):
+        loginPageStyleSheet1 = "background-image : url(top.png); background-color: rgba(255, 255, 255, 0);"
+        button = QPushButton(self)
+        button.setGeometry(-1, -1, 862, 50)
+        button.setStyleSheet(loginPageStyleSheet1)
+        button.clicked.connect(self.openglcsite)
+
+    def drawbottom(self):
+        loginPageStyleSheet2 = "background-image : url(low.png); background-color: rgba(255, 255, 255, 0);"
+        button = QPushButton(self)
+        button.setGeometry(151, 380, 840, 82)
+        button.setStyleSheet(loginPageStyleSheet2)
+        button.clicked.connect(self.ugh)
+
+    def playbtn(self):
+        loginPageStyleSheet3 = "background-image : url(play.png); background-color: rgba(255, 255, 255, 0);"
+        button = QPushButton(self)
+        button.setGeometry(191, 400, 200, 62)
+        button.setStyleSheet(loginPageStyleSheet3)
+        button.clicked.connect(self.ugh)
+
+    def ugh(self):
+        print("ugh")
+
+    def openglcsite(self):
+        subprocess.Popen(["explorer", "https://glacierclient.net"])
 
     def loginScreen(self):
         print("login")
@@ -140,7 +170,7 @@ class MainWindow(QMainWindow):
             "uuid": login_data["selectedProfile"]["id"],
             "token": login_data["accessToken"]
         }
-        minecraft_command = minecraft_launcher_lib.command.get_minecraft_command("1.17", minecraft_directory, options)
+        minecraft_command = minecraft_launcher_lib.command.get_minecraft_command("1.8.8", minecraft_directory, options)
         subprocess.call(minecraft_command)
 
 
