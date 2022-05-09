@@ -10,7 +10,7 @@ import json
 
 CLIENT_ID = "2407b523-e1ab-4a9e-b9eb-e95ca4ea571b"
 SECRET = "7309f236-3378-4c6f-bd88-864af59d95ce"
-REDIRECT_URL = "http://localhost"
+REDIRECT_URL = "https://api.glacierclient.net/login/microsoft"
 
 login_data = ""
 minecraft_directory = minecraft_launcher_lib.utils.get_minecraft_directory()
