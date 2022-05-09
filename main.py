@@ -9,7 +9,7 @@ import os
 import json
 
 CLIENT_ID = "2407b523-e1ab-4a9e-b9eb-e95ca4ea571b"
-SECRET = "7309f236-3378-4c6f-bd88-864af59d95ce"
+SECRET = "XpL8Q~pRHvxk5oGM8l3~_hXnQqicIJJJHi~UIbUK"
 REDIRECT_URL = "https://api.glacierclient.net/login/microsoft"
 
 login_data = ""
