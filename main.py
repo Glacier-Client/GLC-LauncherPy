@@ -9,18 +9,23 @@ import os
 import json
 
 CLIENT_ID = "2407b523-e1ab-4a9e-b9eb-e95ca4ea571b"
-SECRET = "7309f236-3378-4c6f-bd88-864af59d95ce"
-REDIRECT_URL = "http://localhost"
+SECRET = "XpL8Q~pRHvxk5oGM8l3~_hXnQqicIJJJHi~UIbUK"
+REDIRECT_URL = "https://api.glacierclient.net/login/microsoft"
 
 login_data = ""
 minecraft_directory = minecraft_launcher_lib.utils.get_minecraft_directory()
+
+def showLogin(self):
+    self.close()
+    self.loginWindow = LoginWindow()
+    self.launcherWindow = Launcher()
+
 
 class LoginWindow(QWebEngineView):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle("Glacier Client - Login")
-        self.setWindowIcon(QtGui.QIcon("logo.png"))
+        self.setWindowTitle("Login Window Example")
 
         # Set the path where the refresh token is saved
         self.refresh_token_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), "refresh_token.json")
@@ -32,9 +37,6 @@ class LoginWindow(QWebEngineView):
                 # Do the login with refresh token
                 try:
                     account_informaton = minecraft_launcher_lib.microsoft_account.complete_refresh(CLIENT_ID, SECRET, REDIRECT_URL, refresh_token)
-                    login_data = account_informaton
-                    w = MainWindow()
-                    w.show()
                     self.show_account_information(account_informaton)
                     return
                 # Show the window if the refresh token is invalid
@@ -57,10 +59,8 @@ class LoginWindow(QWebEngineView):
             # Do the login
             account_informaton = minecraft_launcher_lib.microsoft_account.complete_login(CLIENT_ID, SECRET, REDIRECT_URL, auth_code)
             login_data = account_informaton
-            w = MainWindow()
-            w.show()
             # Show the login information
-            self.show_account_information(account_informaton)
+            #self.show_account_information(account_informaton)
 
     def show_account_information(self, information_dict):
         information_string = f'Username: {information_dict["name"]}<br>'
@@ -76,13 +76,8 @@ class LoginWindow(QWebEngineView):
         message_box.setText(information_string)
         message_box.setStandardButtons(QMessageBox.StandardButton.Ok)
         message_box.exec()
-        w = MainWindow()
-        w.show()
-        # Exit the program
-        sys.exit(0)
-
-    def getInfo(self):
-        return login_data
+    def getaccount_informaton():
+        return account_informaton
 
 
 
@@ -105,20 +100,13 @@ class LoadingWindow(QMainWindow):
         button = QPushButton(self)
         button.setGeometry(50, 300, 302, 122)
         button.setStyleSheet(loginPageStyleSheet)
-        button.clicked.connect(self.loginScreen)
+        button.clicked.connect(lambda: showLogin(self))
 
-    def loginScreen(self):
-        print("login")
-        w = LoginWindow()
-        w.show()
-        self.close()
 
-class MainWindow(QMainWindow):
+class Launcher(QMainWindow):
     def __init__(self):
         super().__init__()
-
         loadinPageStyleSheet = "background-image : url(background.png);"
-
         self.setWindowTitle("Glacier Client - Launcher")
         self.setWindowIcon(QtGui.QIcon("logo.png"))
         self.setFixedSize(QSize(800, 400))
@@ -140,17 +128,15 @@ class MainWindow(QMainWindow):
             "uuid": login_data["selectedProfile"]["id"],
             "token": login_data["accessToken"]
         }
-        minecraft_command = minecraft_launcher_lib.command.get_minecraft_command("1.17", minecraft_directory, options)
+        minecraft_command = minecraft_launcher_lib.command.get_minecraft_command("1.8.8", minecraft_directory, options)
         subprocess.call(minecraft_command)
 
 
 def main():
     app = QApplication(sys.argv)
     QWebEngineProfile.defaultProfile().setHttpAcceptLanguage(QLocale.system().name().split("_")[0])
-    window = LoadingWindow()
-    window.show()
-    #window = MainWindow()
-    sys.exit(app.exec())
+    lodingWindow = LoadingWindow()
+    app.exec_()
 
 
 
