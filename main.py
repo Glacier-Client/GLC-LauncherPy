@@ -106,11 +106,11 @@ class LoadingWindow(QMainWindow):
 class Launcher(QMainWindow):
     def __init__(self):
         super().__init__()
-        loadinPageStyleSheet = "background-image : url(background.png);"
+        launchPageStyleSheet = "background-image : url(bg.png);"
         self.setWindowTitle("Glacier Client - Launcher")
         self.setWindowIcon(QtGui.QIcon("logo.png"))
         self.setFixedSize(QSize(800, 400))
-        self.setStyleSheet(loadinPageStyleSheet)
+        self.setStyleSheet(launchPageStyleSheet)
         self.UiComponents()
         self.show()
 
@@ -118,11 +118,12 @@ class Launcher(QMainWindow):
         ##loginPageStyleSheet = "background-image : url(Login.png); background-color: rgba(255, 255, 255, 0);"
         button = QPushButton(self)
         button.setGeometry(50, 300, 302, 122)
-        button.setStyleSheet("Play!")##loginPageStyleSheet)
+        button.setStyleSheet("background-image : url(play.png);")
         button.clicked.connect(self.Play)
 
     def Play(self):
         print("Play")
+        print(login_data)
         options = {
             "username": login_data["selectedProfile"]["name"],
             "uuid": login_data["selectedProfile"]["id"],
