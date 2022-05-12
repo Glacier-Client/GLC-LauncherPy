@@ -12,7 +12,8 @@ CLIENT_ID = "2407b523-e1ab-4a9e-b9eb-e95ca4ea571b"
 SECRET = "XpL8Q~pRHvxk5oGM8l3~_hXnQqicIJJJHi~UIbUK"
 REDIRECT_URL = "https://api.glacierclient.net/login/microsoft"
 
-minecraft_directory = minecraft_launcher_lib.utils.get_minecraft_directory()
+
+minecraft_directory = os.path.join(os.path.dirname(__file__), ".minecraft")
 
 
 class LoginWindow(QWebEngineView):

@@ -1,13 +1,13 @@
-[17:11:27] [Client thread/INFO]: Setting user: SpyMiner
-[17:11:27] [Client thread/INFO]: (Session ID is token:eyJhbGciOiJIUzI1NiJ9.eyJ4dWlkIjoiMjUzNTQ0MDI0NzAxNDM5MCIsImFnZyI6IkFkdWx0Iiwic3ViIjoiZjRmOGQzZDgtNmFjNS00YzFiLWI4NmYtYjE0YjAxMTc3ZDE3IiwibmJmIjoxNjUyMzY4MjI4LCJhdXRoIjoiWEJPWCIsInJvbGVzIjpbXSwiaXNzIjoiYXV0aGVudGljYXRpb24iLCJleHAiOjE2NTI0NTQ2MjgsImlhdCI6MTY1MjM2ODIyOCwicGxhdGZvcm0iOiJVTktOT1dOIiwieXVpZCI6IjVjNDc1NTNhN2Y4NmM1M2U3YjA4ODVkMGQ1ZjE3NjllIn0.PqPOgA1Stofc1XmTJRApdTXocg5dMHWMx3wvAt00dNA:8288a11447b84f5a83d7aefe66c46a47)
-[17:11:28] [Client thread/INFO]: LWJGL Version: 2.9.4
-[17:11:29] [Client thread/INFO]: Reloading ResourceManager: Default
-[17:11:29] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[17:11:29] [Thread-5/INFO]: Initializing LWJGL OpenAL
-[17:11:29] [Thread-5/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[17:11:29] [Thread-5/INFO]: OpenAL initialized.
-[17:11:29] [Sound Library Loader/INFO]: Sound engine started
-[17:11:30] [Client thread/INFO]: Created: 512x512 textures-atlas
-[17:11:37] [Client thread/INFO]: Stopping!
-[17:11:37] [Client thread/INFO]: SoundSystem shutting down...
-[17:11:37] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[17:37:23] [Client thread/INFO]: Setting user: SpyMiner
+[17:37:23] [Client thread/INFO]: (Session ID is token:eyJhbGciOiJIUzI1NiJ9.eyJ4dWlkIjoiMjUzNTQ0MDI0NzAxNDM5MCIsImFnZyI6IkFkdWx0Iiwic3ViIjoiZjRmOGQzZDgtNmFjNS00YzFiLWI4NmYtYjE0YjAxMTc3ZDE3IiwibmJmIjoxNjUyMzY5NzA5LCJhdXRoIjoiWEJPWCIsInJvbGVzIjpbXSwiaXNzIjoiYXV0aGVudGljYXRpb24iLCJleHAiOjE2NTI0NTYxMDksImlhdCI6MTY1MjM2OTcwOSwicGxhdGZvcm0iOiJVTktOT1dOIiwieXVpZCI6IjVjNDc1NTNhN2Y4NmM1M2U3YjA4ODVkMGQ1ZjE3NjllIn0._qP3ZPIt2ZcKsV7r9gDWuwcmB3AGN_9qUnoXY8i8Is0:8288a11447b84f5a83d7aefe66c46a47)
+[17:37:24] [Client thread/INFO]: LWJGL Version: 2.9.4
+[17:37:25] [Client thread/INFO]: Reloading ResourceManager: Default
+[17:37:26] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[17:37:26] [Thread-6/INFO]: Initializing LWJGL OpenAL
+[17:37:26] [Thread-6/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[17:37:26] [Thread-6/INFO]: OpenAL initialized.
+[17:37:27] [Sound Library Loader/INFO]: Sound engine started
+[17:37:29] [Client thread/INFO]: Created: 512x512 textures-atlas
+[17:38:03] [Client thread/INFO]: Stopping!
+[17:38:03] [Client thread/INFO]: SoundSystem shutting down...
+[17:38:03] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
