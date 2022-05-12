@@ -132,6 +132,8 @@ class MainWindow(QMainWindow):
         loginbutton.clicked.connect(lambda: self.showLogin())
 
     def play(self):
+        print("Install")
+        minecraft_launcher_lib.install.install_minecraft_version("1.8.9", minecraft_directory)
         print("Play")
         print(self.login_data)
         options = {
